@@ -1,0 +1,34 @@
+.header {
+  background-color: #f7f7f7;
+  display: flex;
+  width: 1440px;
+  padding: 24px 64px;
+  align-items: center;
+  gap: 450px;
+}
+
+.iconLogo {
+  width: 136px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.navigationBox {
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  color: rgba(16, 24, 40, 1);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.activeLink {
+  color: rgba(216, 67, 67, 1);
+}

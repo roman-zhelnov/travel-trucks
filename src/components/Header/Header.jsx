@@ -15,7 +15,7 @@ const Header = () => {
         <NavLink className={buildLinkClass} to="/">
           Home
         </NavLink>
-        <NavLink className={buildLinkClass} to="/movies">
+        <NavLink className={buildLinkClass} to="/catalog">
           Catalog
         </NavLink>
       </div>

@@ -18,6 +18,15 @@
   }
 }
 
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 524px;
+  height: 320px;
+  position: relative;
+}
+
 .headItem {
   display: flex;
   justify-content: space-between;
@@ -33,7 +42,6 @@
 }
 .price {
   display: flex;
-  width: 156px;
   justify-content: center;
   align-items: center;
   gap: 12px;
@@ -46,9 +54,33 @@
   }
 }
 
+.favoritesBtn {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
 .iconHeart {
   width: 26px;
   height: 24px;
+}
+
+.wrapperRatingLocation {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--Main, #101828);
 }
 
 .iconStar {
@@ -57,7 +89,79 @@
   color: #ffc531;
 }
 
+.location {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--Main, #101828);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.iconMap {
+  width: 16px;
+  height: 16px;
+}
+
 .description {
-  max-width: 525px;
   height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--Text, #475467);
+}
+
+.equipmentList {
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.equipmentItem {
+  display: flex;
+  gap: 8px;
+  padding: 12px 18px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: var(--Badges, #f2f4f7);
+  color: var(--Main, #101828);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.equipmentIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 166px;
+  height: 56px;
+  border-radius: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e44848;
+  border: none;
+  transition: all 250ms ease-in;
+  color: #fff;
+  &:hover {
+    background: var(--Button-Hover, #d84343);
+  }
 }

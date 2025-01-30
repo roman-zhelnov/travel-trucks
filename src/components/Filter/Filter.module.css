@@ -1,0 +1,75 @@
+.location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.label {
+  color: var(--Gray, #6c717b);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 360px;
+  height: 56px;
+  padding: 18px 20px 18px 36px;
+  border-radius: 12px;
+  border: none;
+  background: var(--Inputs, #f7f7f7);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--Main, #101828);
+  outline: none;
+}
+
+.iconMap {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 18px;
+}
+
+.title {
+  color: var(--Text, #475467);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.formBtn {
+  display: flex;
+  width: 166px;
+  padding: 16px 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 200px;
+  border: none;
+  background: var(--Button, #e44848);
+  color: var(--White, #fff);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.08px;
+  transition: all 250ms ease-in;
+  &:hover {
+    background: var(--Button-Hover, #d84343);
+  }
+}

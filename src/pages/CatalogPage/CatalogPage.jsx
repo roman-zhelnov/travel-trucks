@@ -3,6 +3,7 @@ import TrucksList from "../../components/TrucksList/TrucksList.jsx";
 import { useEffect } from "react";
 import { fetchTrucks } from "../../redux/trucks/operations.js";
 import Filter from "../../components/Filter/Filter.jsx";
+import s from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const CatalogPage = () => {
     dispatch(fetchTrucks());
   }, [dispatch]);
   return (
-    <div className="">
+    <div className={s.catalogPage}>
       <Filter />
       <TrucksList />
     </div>

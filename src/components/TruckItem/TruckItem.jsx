@@ -27,52 +27,62 @@ const TruckItem = ({
 }) => {
   return (
     <li className={s.item}>
-      <div className={s.img}>
+      <div>
         {gallery.length > 0 && (
           <img src={gallery[0].thumb} alt={`${name} preview`} />
         )}
       </div>
-      <div>
-        <div className={s.headItem}>
-          <h2>{name}</h2>
-          <div className={s.price}>
-            <p>&#8364;{price}.00</p>
-            <SlHeart className={s.iconHeart} />
+      <div className={s.infoContainer}>
+        <div>
+          <div className={s.headItem}>
+            <h2>{name}</h2>
+            <div className={s.price}>
+              <p>&#8364;{price}.00</p>
+              <button className={s.favoritesBtn}>
+                <SlHeart className={s.iconHeart} />
+              </button>
+            </div>
           </div>
-        </div>
-        <div>
-          <GoStarFill className={s.iconStar} />
-          <p>
-            {rating}({reviews.length} Reviews)
-          </p>
-        </div>
-        <div>
-          <BsMap />
-          <p>{location}</p>
+          <div className={s.wrapperRatingLocation}>
+            <div className={s.rating}>
+              <GoStarFill className={s.iconStar} />
+              <p>
+                {rating}({reviews.length} Reviews)
+              </p>
+            </div>
+            <div className={s.location}>
+              <BsMap className={s.iconMap} />
+              <p>{location}</p>
+            </div>
+          </div>
         </div>
         <p className={s.description}>{description}</p>
-        <div>
-          <BsDiagram3 />
-          <p>{increaseFirstLetter(transmission)}</p>
-        </div>
-        <div>
-          <BsFuelPump />
-          <p>{increaseFirstLetter(engine)}</p>
-        </div>
-        {kitchen ? (
-          <div>
-            <BsCupHot />
-            <p>Kitchen</p>
+        <div className={s.equipmentList}>
+          <div className={s.equipmentItem}>
+            <BsDiagram3 className={s.equipmentIcon} />
+            <p>{increaseFirstLetter(transmission)}</p>
           </div>
-        ) : null}
-        {AC ? (
-          <div>
-            <BsWind />
-            <p>AC</p>
+          <div className={s.equipmentItem}>
+            <BsFuelPump className={s.equipmentIcon} />
+            <p>{increaseFirstLetter(engine)}</p>
           </div>
-        ) : null}
+          {kitchen ? (
+            <div className={s.equipmentItem}>
+              <BsCupHot className={s.equipmentIcon} />
+              <p>Kitchen</p>
+            </div>
+          ) : null}
+          {AC ? (
+            <div className={s.equipmentItem}>
+              <BsWind className={s.equipmentIcon} />
+              <p>AC</p>
+            </div>
+          ) : null}
+        </div>
         <Link to={`/catalog/${id}`}>
-          <button type="button">Show more</button>
+          <button type="button" className={s.btn}>
+            Show more
+          </button>
         </Link>
       </div>
     </li>

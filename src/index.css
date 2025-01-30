@@ -3,6 +3,7 @@
 body {
   font-family: Inter;
   line-height: 1.5;
+  background: var(--White, #fff);
 }
 
 h1,
@@ -25,5 +26,8 @@ li {
 
 img {
   display: block;
-  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
 }

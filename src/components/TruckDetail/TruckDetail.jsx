@@ -6,36 +6,37 @@ import { selectTruckItem } from "../../redux/trucks/slice.js";
 
 const TruckDetail = () => {
   const truck = useSelector(selectTruckItem);
-  console.log(truck);
 
   const { name, rating, reviews, location, price, gallery, description } =
     truck;
   return (
     <div>
-      <div>
-        <h2>{name}</h2>
-        <div>
-          <div>
-            <GoStarFill />
-            <p>
-              {rating}({reviews.length} Reviews)
-            </p>
+      <div className={s.titleBlock}>
+        <h2 className={s.name}>{name}</h2>
+        <div className={s.infoBlock}>
+          <div className={s.ratingLocationBlock}>
+            <div className={s.rating}>
+              <GoStarFill className={s.iconStar} />
+              <p>
+                {rating}({reviews.length} Reviews)
+              </p>
+            </div>
+            <div className={s.location}>
+              <BsMap className={s.iconMap} />
+              <p>{location}</p>
+            </div>
           </div>
-          <div>
-            <BsMap className={s.iconMap} />
-            <p>{location}</p>
-          </div>
-          <p>&#8364;{price}.00</p>
+          <p className={s.price}>&#8364;{price.toFixed(2)}</p>
         </div>
       </div>
-      <ul>
+      <ul className={s.imgList}>
         {gallery.map((item) => (
           <li key={item.original}>
-            <img src={item.thumb} alt={`photo preview`} />
+            <img src={item.thumb} alt={`photo preview`} className={s.img} />
           </li>
         ))}
       </ul>
-      <p>{description}</p>
+      <p className={s.description}>{description}</p>
     </div>
   );
 };

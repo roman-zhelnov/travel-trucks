@@ -29,7 +29,6 @@ const slice = createSlice({
       })
       .addCase(fetchTruckById.fulfilled, (state, action) => {
         state.truckItem = action.payload;
-        console.log(action.payload);
         state.isLoad = false;
       })
       .addCase(fetchTruckById.pending, (state) => {

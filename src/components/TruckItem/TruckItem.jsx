@@ -37,7 +37,7 @@ const TruckItem = ({
           <div className={s.headItem}>
             <h2>{name}</h2>
             <div className={s.price}>
-              <p>&#8364;{price}.00</p>
+              <p>&#8364;{price.toFixed(2)}</p>
               <button className={s.favoritesBtn}>
                 <SlHeart className={s.iconHeart} />
               </button>

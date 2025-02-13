@@ -3,7 +3,7 @@ import { BsMap } from "react-icons/bs";
 import s from "./TruckDetail.module.css";
 import { useSelector } from "react-redux";
 import { selectTruckItem } from "../../redux/trucks/slice.js";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import clsx from "clsx";
 
 const TruckDetail = () => {
@@ -51,7 +51,8 @@ const TruckDetail = () => {
           Reviews
         </NavLink>
       </div>
-      <hr />
+      <hr className={s.customLine} />
+      <Outlet />
     </div>
   );
 };

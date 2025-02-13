@@ -108,3 +108,9 @@
   font-weight: bold;
   text-decoration: none;
 }
+
+.customLine {
+  margin-bottom: 44px;
+  stroke-width: 1px;
+  stroke: var(--Gray-light, #dadde1);
+}

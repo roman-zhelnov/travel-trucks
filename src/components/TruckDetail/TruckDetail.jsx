@@ -3,9 +3,15 @@ import { BsMap } from "react-icons/bs";
 import s from "./TruckDetail.module.css";
 import { useSelector } from "react-redux";
 import { selectTruckItem } from "../../redux/trucks/slice.js";
+import { NavLink } from "react-router-dom";
+import clsx from "clsx";
 
 const TruckDetail = () => {
   const truck = useSelector(selectTruckItem);
+
+  const buildLinkClass = ({ isActive }) => {
+    return clsx(s.link, isActive && s.activeLink);
+  };
 
   const { name, rating, reviews, location, price, gallery, description } =
     truck;
@@ -37,6 +43,15 @@ const TruckDetail = () => {
         ))}
       </ul>
       <p className={s.description}>{description}</p>
+      <div className={s.links}>
+        <NavLink to="features" className={buildLinkClass}>
+          Features
+        </NavLink>
+        <NavLink to="reviews" className={buildLinkClass}>
+          Reviews
+        </NavLink>
+      </div>
+      <hr />
     </div>
   );
 };

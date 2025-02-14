@@ -1,0 +1,18 @@
+.starsRatingBox {
+  display: flex;
+  gap: 4px;
+}
+
+.fullStars {
+  color: #ffc531;
+}
+
+.blankStars {
+  color: #f2f4f7;
+}
+
+.fullStars,
+.blankStars {
+  width: 16px;
+  height: 16px;
+}

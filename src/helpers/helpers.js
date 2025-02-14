@@ -1,5 +1,5 @@
 export const increaseFirstLetter = (str) =>
-  str.charAt(0).toUpperCase() + str.slice(1);
+  str.trim().charAt(0).toUpperCase() + str.slice(1);
 
 export const formatCamelCase = (str) => {
   return str

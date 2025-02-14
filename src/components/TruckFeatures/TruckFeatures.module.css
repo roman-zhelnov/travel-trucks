@@ -1,5 +1,6 @@
 .featuresBox {
   display: flex;
+  margin-top: 44px;
   width: 631px;
   padding: 44px 80px;
   flex-direction: column;

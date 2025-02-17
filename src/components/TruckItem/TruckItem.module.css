@@ -163,6 +163,6 @@
   transition: all 250ms ease-in;
   color: #fff;
   &:hover {
-    background: var(--Button-Hover, #d84343);
+    background-color: #d84343;
   }
 }

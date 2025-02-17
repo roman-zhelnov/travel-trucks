@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { selectTruckItem } from "../../redux/trucks/slice.js";
 import { NavLink, Outlet } from "react-router-dom";
 import clsx from "clsx";
+import FormBook from "../Form/FormBook.jsx";
 
 const TruckDetail = () => {
   const truck = useSelector(selectTruckItem);
@@ -52,7 +53,10 @@ const TruckDetail = () => {
         </NavLink>
       </div>
       <hr className={s.customLine} />
-      <Outlet />
+      <div className={s.outletForm}>
+        <Outlet />
+        <FormBook />
+      </div>
     </div>
   );
 };

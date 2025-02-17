@@ -111,5 +111,11 @@
 
 .customLine {
   stroke-width: 1px;
+  margin: 0;
   stroke: var(--Gray-light, #dadde1);
+}
+
+.outletForm {
+  display: flex;
+  gap: 40px;
 }

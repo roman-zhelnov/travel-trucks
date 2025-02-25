@@ -87,11 +87,11 @@ const FormBook = () => {
             </Field>
             <div>
               <Field
+                as="textarea"
                 className={s.input}
                 name="comment"
                 placeholder="Comment"
                 id="comment"
-                type="text"
               />
               <ErrorMessage
                 className={s.error}

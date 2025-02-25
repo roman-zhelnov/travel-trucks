@@ -27,7 +27,8 @@
 
 .input {
   border-radius: 12px;
-  padding: 18px 337px 18px 18px;
+  width: 527px;
+  padding: 18px;
   outline: none;
   border: none;
   background-color: #f7f7f7;
@@ -35,6 +36,11 @@
   font-size: 16px;
   line-height: 150%;
   color: #6c717b;
+}
+
+textarea {
+  resize: none;
+  height: 118px;
 }
 
 .btn {

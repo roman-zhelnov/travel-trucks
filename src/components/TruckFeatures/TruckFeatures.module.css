@@ -18,10 +18,9 @@
 }
 
 .customLine {
+  border: none;
+  border-top: 1px solid #dadde1;
   width: 527px;
-  height: 0px;
-  stroke-width: 1px;
-  stroke: #dadde1;
 }
 
 .detailsList {

@@ -23,11 +23,11 @@
   width: 60px;
   height: 60px;
   border-radius: 60px;
-  background: var(--Badges, #f2f4f7);
+  background-color: #f2f4f7;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--Button, #e44848);
+  color: #e44848;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -40,7 +40,7 @@
   gap: 4px;
   flex-direction: column;
   h3 {
-    color: var(--Main, #101828);
+    color: #101828;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -50,7 +50,7 @@
 }
 
 .comment {
-  color: var(--Text, #475467);
+  color: #475467;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;

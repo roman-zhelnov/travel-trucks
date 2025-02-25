@@ -3,7 +3,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import s from "./FormBook.module.css";
 import * as Yup from "yup";
-import dayjs from "dayjs";
 
 const FormBook = () => {
   const initialValues = {

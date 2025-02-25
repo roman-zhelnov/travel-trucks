@@ -1,11 +1,13 @@
-import clsx from "clsx";
 import s from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
-  const buildLinkClass = ({ isActive }) => {
-    return clsx(s.link, isActive && s.activeLink);
-  };
+  const location = useLocation();
+  const isDetailsPage = /^\/catalog\/[^/]+(\/features|\/reviews)?$/.test(
+    location.pathname
+  );
+  const buildLinkClass = ({ isActive }) =>
+    isActive && !isDetailsPage ? s.activeLink : s.link;
   return (
     <div className={s.header}>
       <svg className={s.iconLogo}>

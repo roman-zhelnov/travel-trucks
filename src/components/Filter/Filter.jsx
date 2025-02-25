@@ -9,32 +9,34 @@ const Filter = () => {
     location: "",
   };
   return (
-    <Formik initialValues={initialValues}>
-      <Form>
-        <div className={s.location}>
-          <label htmlFor="location" className={s.label}>
-            Location
-          </label>
+    <div className={s.filterBox}>
+      <Formik initialValues={initialValues}>
+        <Form>
+          <div className={s.location}>
+            <label htmlFor="location" className={s.label}>
+              Location
+            </label>
 
-          <div className={s.inputBox}>
-            <Field
-              id="location"
-              name="location"
-              type="text"
-              placeholder="City"
-              className={s.input}
-            />
-            <BsMap className={s.iconMap} />
+            <div className={s.inputBox}>
+              <Field
+                id="location"
+                name="location"
+                type="text"
+                placeholder="City"
+                className={s.input}
+              />
+              <BsMap className={s.iconMap} />
+            </div>
           </div>
-        </div>
-        <h2 className={s.title}>Filters</h2>
-        <VehicleEquipment />
-        <VehicleType />
-        <button type="submit" className={s.formBtn}>
-          Search
-        </button>
-      </Form>
-    </Formik>
+          <h2 className={s.title}>Filters</h2>
+          <VehicleEquipment />
+          <VehicleType />
+          <button type="submit" className={s.formBtn}>
+            Search
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 export default Filter;

@@ -31,4 +31,6 @@
 
 .activeLink {
   color: rgba(216, 67, 67, 1);
+  font-weight: bold;
+  text-decoration: none;
 }

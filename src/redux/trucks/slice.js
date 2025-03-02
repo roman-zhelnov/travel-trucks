@@ -4,6 +4,8 @@ import { fetchTruckById, fetchTrucks } from "./operations.js";
 const initialState = {
   items: [],
   total: 0,
+  filter: {},
+  currentPage: 1,
   truckItem: null,
   isLoad: false,
   isError: null,

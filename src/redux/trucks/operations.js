@@ -13,7 +13,7 @@ export const fetchTrucks = createAsyncThunk(
 
       return data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.massage);
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -25,7 +25,7 @@ export const fetchTruckById = createAsyncThunk(
       const { data } = await truckApi.get(`/campers/${id}`);
       return data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.massage);
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );

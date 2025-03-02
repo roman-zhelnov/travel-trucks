@@ -7,9 +7,14 @@ export const truckApi = axios.create({
 
 export const fetchTrucks = createAsyncThunk(
   "fetchData",
-  async (_, thunkApi) => {
+  async ({ filters, page = 1, limit = 4 }, thunkApi) => {
+    const params = new URLSearchParams({
+      ...filters,
+      page,
+      limit,
+    }).toString();
     try {
-      const { data } = await truckApi.get("/campers");
+      const { data } = await truckApi.get(`/campers?${params}`);
 
       return data;
     } catch (error) {

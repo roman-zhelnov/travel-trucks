@@ -1,26 +1,38 @@
-import { useSelector } from "react-redux";
-import { selectTotal, selectTrucks } from "../../redux/trucks/slice.js";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectCurrentPage,
+  selectTotal,
+  selectTrucks,
+  setCurrentPage,
+} from "../../redux/trucks/slice.js";
 import TruckItem from "../TruckItem/TruckItem.jsx";
 import s from "./TruckList.module.css";
-import { useState } from "react";
+import { useEffect } from "react";
+import { fetchTrucks } from "../../redux/trucks/operations.js";
 
 const TrucksList = () => {
+  const dispatch = useDispatch();
+  const currentPage = useSelector(selectCurrentPage);
   const trucks = useSelector(selectTrucks);
   const total = useSelector(selectTotal);
-  const [visibleCount, setVisibleCount] = useState(4);
+
+  useEffect(() => {
+    dispatch(fetchTrucks({ page: 1, limit: 4 }));
+  }, [dispatch]);
 
   const handleLoadMore = () => {
-    setVisibleCount((prevCount) => Math.min(prevCount + 4, total));
+    dispatch(fetchTrucks({ page: currentPage + 1, limit: 4 }));
+    dispatch(setCurrentPage(currentPage + 1));
   };
 
   return (
     <div className={s.catalogList}>
       <ul className={s.list}>
-        {trucks.slice(0, visibleCount).map((item) => (
+        {trucks.map((item) => (
           <TruckItem key={item.id} {...item} />
         ))}
       </ul>
-      {visibleCount < total ? (
+      {trucks.length < total ? (
         <button
           type="button"
           className={s.loadMoreBtn}

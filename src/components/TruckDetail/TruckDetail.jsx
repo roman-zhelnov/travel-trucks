@@ -3,12 +3,28 @@ import { BsMap } from "react-icons/bs";
 import s from "./TruckDetail.module.css";
 import { useSelector } from "react-redux";
 import { selectTruckItem } from "../../redux/trucks/slice.js";
-import { NavLink, Outlet } from "react-router-dom";
+import {
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import clsx from "clsx";
 import FormBook from "../Form/FormBook.jsx";
+import { useEffect } from "react";
 
 const TruckDetail = () => {
   const truck = useSelector(selectTruckItem);
+  const nav = useNavigate();
+  const loc = useLocation();
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (loc.pathname === `/catalog/${id}`) {
+      nav("features", { replace: true });
+    }
+  }, [nav, id, loc.pathname]);
 
   const buildLinkClass = ({ isActive }) => {
     return clsx(s.link, isActive && s.activeLink);

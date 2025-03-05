@@ -3,14 +3,38 @@ import s from "./Filter.module.css";
 import { BsMap } from "react-icons/bs";
 import VehicleEquipment from "../VehicleEquipment/VehicleEquipment.jsx";
 import VehicleType from "../VehicleType/VehicleType.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  resetTruck,
+  selectFilters,
+  setFilters,
+} from "../../redux/trucks/slice.js";
+import { fetchTrucks } from "../../redux/trucks/operations.js";
+import { sanitizedFilters } from "../../helpers/helpers.js";
 
 const Filter = () => {
+  const dispatch = useDispatch();
+  const filters = useSelector(selectFilters);
   const initialValues = {
     location: "",
   };
+
+  const handleSearch = (values, options) => {
+    dispatch(resetTruck());
+    const newFilters = {
+      ...filters,
+      location: values.location.trim(),
+    };
+
+    const snitFilters = sanitizedFilters(newFilters);
+
+    dispatch(setFilters(snitFilters));
+    dispatch(fetchTrucks({ filters: snitFilters, page: 1 }));
+    options.resetForm();
+  };
   return (
     <div className={s.filterBox}>
-      <Formik initialValues={initialValues}>
+      <Formik initialValues={initialValues} onSubmit={handleSearch}>
         <Form>
           <div className={s.location}>
             <label htmlFor="location" className={s.label}>

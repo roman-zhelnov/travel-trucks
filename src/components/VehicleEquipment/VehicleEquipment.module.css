@@ -4,7 +4,7 @@
 }
 
 .title {
-  color: var(--Main, #101828);
+  color: #101828;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -15,7 +15,7 @@
 .customLine {
   border: none;
   height: 1px;
-  background-color: var(--Gray-light, #dadde1);
+  background-color: #dadde1;
   margin: 24px 0;
 }
 
@@ -36,12 +36,12 @@
   gap: 8px;
   background-color: transparent;
   border-radius: 12px;
-  border: 1px solid var(--Gray-light, #dadde1);
+  border: 1px solid #dadde1;
   transition: border-color 250ms;
 }
 
 .active {
-  border-color: var(--Button, #e44848);
+  border-color: #e44848;
 }
 
 .filterBtnAC {
@@ -70,7 +70,7 @@
 }
 
 .textBtn {
-  color: var(--Main, #101828);
+  color: #101828;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

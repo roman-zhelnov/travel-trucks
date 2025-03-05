@@ -9,3 +9,12 @@ export const formatCamelCase = (str) => {
 };
 
 export const addSpaceNumber = (str) => str.replace(/(\d)([a-zA-Z])/g, "$1 $2");
+
+export const sanitizedFilters = (filters) => {
+  return Object.fromEntries(
+    Object.entries(filters).filter(
+      ([_, value]) =>
+        value !== "" && value !== null && value !== undefined && value !== false
+    )
+  );
+};

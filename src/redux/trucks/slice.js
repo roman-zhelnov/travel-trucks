@@ -24,10 +24,15 @@ const slice = createSlice({
   initialState,
   reducers: {
     setFilters(state, action) {
-      state.filters = action.payload;
+      state.filters = { ...state.filters, ...action.payload };
     },
     setCurrentPage(state, action) {
       state.currentPage = action.payload;
+    },
+    resetTruck(state) {
+      state.items = [];
+      state.currentPage = 1;
+      state.total = 0;
     },
   },
   extraReducers: (builder) => {
@@ -57,7 +62,7 @@ const slice = createSlice({
 
 export const trucksReducer = slice.reducer;
 
-export const { setFilters, setCurrentPage } = slice.actions;
+export const { setFilters, setCurrentPage, resetTruck } = slice.actions;
 
 export const selectTrucks = (state) => state.trucks.items;
 export const selectTotal = (state) => state.trucks.total;

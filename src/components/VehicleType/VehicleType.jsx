@@ -1,8 +1,11 @@
 import { BsGrid1X2, BsGrid3X3Gap } from "react-icons/bs";
 import s from "./VehicleType.module.css";
 import { IoGridOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
+import { selectFilters } from "../../redux/trucks/slice.js";
 
 const VehicleType = () => {
+  const filters = useSelector(selectFilters);
   return (
     <div className={s.typeCont}>
       <h3 className={s.title}>Vehicle type</h3>

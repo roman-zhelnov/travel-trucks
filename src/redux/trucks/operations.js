@@ -18,7 +18,12 @@ export const fetchTrucks = createAsyncThunk(
 
       return data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      if (error.response.status === 404) {
+        return thunkApi.rejectWithValue("Sorry, no such campers were found!");
+      }
+      return thunkApi.rejectWithValue(
+        error.message || "There was an error. Please try again later."
+      );
     }
   }
 );

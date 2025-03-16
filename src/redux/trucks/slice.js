@@ -33,6 +33,7 @@ const slice = createSlice({
       state.items = [];
       state.currentPage = 1;
       state.total = 0;
+      state.filters.location = "";
     },
   },
   extraReducers: (builder) => {

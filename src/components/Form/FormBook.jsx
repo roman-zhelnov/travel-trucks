@@ -52,6 +52,7 @@ const FormBook = () => {
                 placeholder="Name*"
                 id="name"
                 type="text"
+                autocomplete="off"
               />
               <ErrorMessage className={s.error} name="name" component="div" />
             </div>
@@ -62,6 +63,7 @@ const FormBook = () => {
                 placeholder="Email*"
                 id="email"
                 type="email"
+                autocomplete="off"
               />
               <ErrorMessage className={s.error} name="email" component="div" />
             </div>
@@ -92,6 +94,7 @@ const FormBook = () => {
                 name="comment"
                 placeholder="Comment"
                 id="comment"
+                autocomplete="off"
               />
               <ErrorMessage
                 className={s.error}

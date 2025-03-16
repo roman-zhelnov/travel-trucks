@@ -19,7 +19,7 @@ const Filter = () => {
     location: "",
   };
 
-  const handleSearch = (values, options) => {
+  const handleSearch = (values) => {
     dispatch(resetTruck());
     const newFilters = {
       ...filters,
@@ -30,7 +30,6 @@ const Filter = () => {
 
     dispatch(setFilters(snitFilters));
     dispatch(fetchTrucks({ filters: snitFilters, page: 1 }));
-    options.resetForm();
   };
   return (
     <div className={s.filterBox}>
@@ -48,6 +47,7 @@ const Filter = () => {
                 type="text"
                 placeholder="City"
                 className={s.input}
+                autocomplete="off"
               />
               <BsMap className={s.iconMap} />
             </div>

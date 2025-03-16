@@ -12,13 +12,16 @@ import {
 } from "react-router-dom";
 import clsx from "clsx";
 import FormBook from "../Form/FormBook.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const TruckDetail = () => {
   const truck = useSelector(selectTruckItem);
   const nav = useNavigate();
   const loc = useLocation();
   const { id } = useParams();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     if (loc.pathname === `/catalog/${id}`) {
@@ -28,6 +31,16 @@ const TruckDetail = () => {
 
   const buildLinkClass = ({ isActive }) => {
     return clsx(s.link, isActive && s.activeLink);
+  };
+
+  const handleIsOpen = (image) => {
+    setSelectedImage(image);
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setSelectedImage(null);
   };
 
   const { name, rating, reviews, location, price, gallery, description } =
@@ -54,11 +67,18 @@ const TruckDetail = () => {
       </div>
       <ul className={s.imgList}>
         {gallery.map((item) => (
-          <li key={item.original}>
+          <li key={item.original} onClick={() => handleIsOpen(item.original)}>
             <img src={item.thumb} alt={`photo preview`} className={s.img} />
           </li>
         ))}
       </ul>
+      {isOpen && (
+        <div className={s.backdrop} onClick={handleClose}>
+          <div className={s.modal} onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage} alt="Full size" className={s.modalImage} />
+          </div>
+        </div>
+      )}
       <p className={s.description}>{description}</p>
       <div className={s.links}>
         <NavLink to="features" className={buildLinkClass}>

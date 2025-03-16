@@ -7,7 +7,7 @@
 }
 
 .name {
-  color: var(--Main, #101828);
+  color: #101828;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -36,7 +36,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  color: var(--Main, #101828);
+  color: #101828;
 }
 
 .iconStar {
@@ -49,7 +49,7 @@
   display: flex;
   gap: 4px;
   align-items: center;
-  color: var(--Main, #101828);
+  color: #101828;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -62,7 +62,7 @@
 }
 
 .price {
-  color: var(--Main, #101828);
+  color: #101828;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -79,15 +79,47 @@
 }
 
 .img {
+  cursor: pointer;
   width: 292px;
   height: 320px;
   border-radius: 10px;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.25s ease;
+}
+
+.img:hover {
+  transform: scale(1.02);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modalImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .description {
-  color: var(--Text, #475467);
+  color: #475467;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
